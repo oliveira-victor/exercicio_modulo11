@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Mozart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="./logo.svg" alt="Logo Casa Mozart">
+            <ul>
+                <li>
+                    <a href="#">Encomendar</a>
+                </li>
+                <li>
+                    |
+                </li>
+                <li>
+                    <a href="#">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <form>
+            <input type="search" placeholder="Busque no site">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+    <div class="container carrinho">
+        <img src="./carrinho.svg" alt="Ícone carrinho de compras">
+        <div id="info-carrinho">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+        <div id="alterar-carrinho">
+            <div><a href="#" style="color: green;" onclick="purchase()">✔ Concluir compras</a></div>
+            <div><a href="#" style="color: red;" onclick="empty()">✘ Esvaziar carrinho</a></div>
+        </div>
+    </div>
+    <div class="container conteudo">
+        <div>
+            <img src="./loja.jpg" alt="Interior da loja">
+        </div>
+        <div id="texto-loja">
+            <h2>Sobre a loja</h2>
+            <p>Casa Mozart é uma loja com 34 anos de tradição em produção e venda de instrumentos clássicos. Contamos com 3 luthiers com décadas de prática em construção de instrumentos, com técnicas passadas por gerações. Temos empenho no que fazemos e aceitamos encomenda. Já atendemos dezenas de orquestras pelo país, e o fato de ajudarrmos a levar música ao mais variado público nos enche de orgulho.</p>
+            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque voluptate necessitatibus quo eligendi, odio incidunt corrupti asperiores odit quidem totam culpa excepturi officiis fuga eum doloribus consectetur vero, ad reprehenderit.</p>
+            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque voluptate necessitatibus quo eligendi, odio incidunt corrupti asperiores odit quidem totam culpa excepturi officiis fuga eum doloribus consectetur vero, ad reprehenderit.</p>
+        
+        </div>
+    </div>
+    <section class="container instrumentos">
+        <h2>Instrumentos disponíveis</h2>
+        <div class="container produtos">
+            <div>
+                <a href="#">
+                    <img src="./violino.jpg" alt="Violino">
+                <div class="texto-produto">
+                    <h3>Violino 4/4 - Assinatura CM</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error rerum commodi suscipit vel, est quia. Sapiente ratione quidem a at quisquam porro consectetur quia asperiores ipsa, eligendi similique itaque quas.</p>
+                </div>
+                </a>
+                <button type="submit" class="botao-carrinho" onclick="addItem()">Adicionar ao carrinho</button>
+            </div>
+            <hr>
+            <div>
+                <a href="#">
+                    <img src="./cello.jpg" alt="Violino">
+                <div class="texto-produto">
+                    <h3>Violoncelo - Assinatura CM</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, rem sunt culpa voluptas dolorum animi voluptatem vitae dolore neque! Velit aperiam perspiciatis accusantium facilis mollitia et. Odit perspiciatis ab quia.</p>
+                </div>
+                </a>
+                <button type="submit" class="botao-carrinho" onclick="addItem()">Adicionar ao carrinho</button>
+            </div>
+            <hr>
+            <div>
+                <a href="#">
+                    <img src="./flauta.jpg" alt="Violino">
+                <div class="texto-produto">
+                    <h3>Flauta transversal - Assinatura CM</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur vero in, laboriosam expedita minima sunt rerum modi libero. Ullam veniam cumque animi iure a quidem vitae quis, maiores alias repudiandae!</p>
+                </div>
+                </a>
+                <button type="submit" class="botao-carrinho" onclick="addItem()">Adicionar ao carrinho</button>
+            </div>
+            <hr>
+            <div>
+                <a href="#">
+                    <img src="./oboe.jpg" alt="Violino">
+                <div class="texto-produto">
+                    <h3>Oboé - Assinatura CM</h3>
+                    <br><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, natus earum quaerat et nisi quasi hic! Reiciendis tenetur explicabo ipsum quidem, quasi beatae harum odit maxime reprehenderit atque natus consequuntur.</p>
+                </div>
+                </a>
+                <button type="submit" class="botao-carrinho" onclick="addItem()">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Tel: (82) 1234-5678</p>
+        <p>Email: contato@casamozart.com</p>
+        <br>&copy; 2022 - Casa Mozart<br>Todos os direitos reservados
+    </footer>
+    <script>
+        let items = 0
+
+        function addItem() {
+            items += 1
+            alert('O produto foi adicionado ao carrinho!')
+            document.querySelector('#alterar-carrinho').style.display = 'block'
+            
+            if (items == 1) {
+                document.querySelector('#info-carrinho').innerHTML = `Seu carrinho possui ${items} item.`
+            } else {
+                document.querySelector('#info-carrinho').innerHTML = `Seu carrinho possui ${items} itens.`
+            }
+            
+        }
+
+        function purchase() {
+            items = 0
+            alert('Compra concluída com sucesso!')
+            document.querySelector('#alterar-carrinho').style.display = 'none'
+        }
+
+        function empty() {
+            items = 0
+            document.querySelector('#info-carrinho').innerHTML = '<p>Seu carrinho está vazio.</p>'
+            alert('O carrinho foi esvaziado.')
+            document.querySelector('#alterar-carrinho').style.display = 'none'
+        }
+    </script>
+</body>
+</html>
